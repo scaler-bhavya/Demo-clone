@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: DaemonSet 
+metadata:
+   name: nginx-ds
+   namespace: qa
+spec:
+  selector: 
+    matchLabels:
+      app: nginx-ds
+  template:
+    metadata:
+      labels:
+        app: nginx-ds
+      namespace: qa
+    spec:
+      containers:
+      - name: nginx-container-ds
+        image: nginx:1.20

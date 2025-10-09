@@ -1,0 +1,22 @@
+# pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-app-pod-affinity
+ labels:
+  app: my-web-app-affinity
+ namespace: qa
+spec:
+ affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: disktype
+          operator: In
+          values: ["ssd"]
+ containers:
+ - name: my-app
+   image: nginx:latest
+          
+

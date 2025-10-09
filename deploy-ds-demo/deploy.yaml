@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+   name: nginx-deploy
+   namespace: qa
+spec:
+  replicas: 5
+  selector: 
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+      namespace: qa
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:1.20

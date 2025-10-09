@@ -1,0 +1,17 @@
+# pod-limits.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-limits
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    resources:
+      requests:         # minimum guaranteed
+        memory: "64Mi"
+        cpu: "100m"
+      limits:           # maximum allowed
+        memory: "128Mi"
+        cpu: "200m"
+

@@ -1,0 +1,17 @@
+# pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+ name: my-app-pod
+ labels:
+  app: my-web-app
+ namespace: qa
+spec:
+ nodeSelector:
+   disktype: ssd
+   region: us-east-1
+ containers:
+ - name: my-app
+   image: nginx:latest
+          
+
