@@ -15,7 +15,7 @@ spec:
         app: vote
     spec:
       containers:
-      - image: bhavyascaler/vote:v5
+      - image: bhavyascaler/vote:v6
         name: vote
         ports:
         - containerPort: 80
