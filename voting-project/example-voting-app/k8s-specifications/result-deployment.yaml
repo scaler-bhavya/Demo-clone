@@ -15,7 +15,7 @@ spec:
         app: result
     spec:
       containers:
-      - image: bhavyascaler/result:v7
+      - image: bhavyascaler/result:v8
         name: result
         ports:
         - containerPort: 80
